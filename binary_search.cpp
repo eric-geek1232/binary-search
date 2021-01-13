@@ -29,13 +29,13 @@ int main(){
 int binarySearch(int array[], int left, int right, int objective)
 {
 	if (right >= left){
-		int mid = left + (right - left) / 2;	// segment the main array in half
+		int mid = left + (right - left) / 2;					// segment the main array in half
 		
 		if(array[mid] == objective){
 			return mid;							// position found
 		}
 		
-		if(array[mid] > objective){				// discard the right side, keep searching from the left to the middle -1
+		if(array[mid] > objective){						// discard the right side, keep searching from the left to the middle -1
 			return binarySearch(array, left, mid - 1, objective);
 		} else {								// discard the left side, keep searching from the middle + 1 to the end
 			return binarySearch(array, mid + 1, right, objective);	
